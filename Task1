@@ -23,3 +23,20 @@ default_args = {
 
 dag = DAG(
     'DSAID', default_args=default_args, schedule_interval=timedelta(days=1))
+
+# CSV Transform
+import csv
+
+with open('dataset1.csv', 'rb') as f:
+    reader = csv.reader(f)
+    newcsvdict = {"first_name": [], "last_name": []}
+    for row in reader:
+        first_name = row[0].split()[0]
+        last_name = row[0].split()[1]
+        newcsvdict["first_name"].append(first)
+        newcsvdict["last_name"].append(last)
+
+with open('new.csv', 'wb') as f:
+    w = csv.DictWriter(f, newcsvdict.keys())
+    w.writeheader()
+    w.writerows(newcsvdict)
