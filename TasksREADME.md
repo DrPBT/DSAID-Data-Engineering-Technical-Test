@@ -8,6 +8,7 @@ https://docs.anaconda.com/anaconda/install/windows/
 It is also my 1st time using PostgresSQL as well as Docker, i'm unsure if this is the conventional method but I have created a dockerfile which COPY the SQL file attached.
 The SQL file contains the SQL scripts to create the tables as per the diagram.
 I am using the Star Schema for the design of the database.
+Queries for the data is in the file Task2_SQLQuery.sql
 references i used to help me with my installation and understanding:
 https://dev.to/andre347/how-to-easily-create-a-postgres-database-in-docker-4moj
 https://docs.docker.com/samples/postgresql_service/
