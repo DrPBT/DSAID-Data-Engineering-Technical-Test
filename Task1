@@ -24,19 +24,27 @@ default_args = {
 dag = DAG(
     'DSAID', default_args=default_args, schedule_interval=timedelta(days=1))
 
-# CSV Transform
-import csv
-
-with open('dataset1.csv', 'rb') as f:
-    reader = csv.reader(f)
-    newcsvdict = {"first_name": [], "last_name": []}
-    for row in reader:
-        first_name = row[0].split()[0]
-        last_name = row[0].split()[1]
-        newcsvdict["first_name"].append(first)
-        newcsvdict["last_name"].append(last)
-
-with open('new.csv', 'wb') as f:
-    w = csv.DictWriter(f, newcsvdict.keys())
-    w.writeheader()
-    w.writerows(newcsvdict)
+#Transforming CSV
+# importing pandas module 
+import pandas as pd
+   
+# reading csv file from url 
+data = pd.read_csv("https://raw.githubusercontent.com/hanselblack/dataeng_test/master/dataset1.csv")
+  
+# dropping null value columns to avoid errors
+data.dropna(inplace = True)
+  
+# new data frame with split value columns
+new = data["name"].str.split(" ", n = 1, expand = True)
+  
+# making separate first name column from new data frame
+data["first_name"]= new[0]
+  
+# making separate last name column from new data frame
+data["last_name"]= new[1]
+  
+# Dropping old Name columns
+data.drop(columns =["name"], inplace = True)
+  
+# df display
+data
