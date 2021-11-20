@@ -24,12 +24,13 @@ default_args = {
 dag = DAG(
     'DSAID', default_args=default_args, schedule_interval=timedelta(days=1))
 
-# Transforming CSV
+# Transform CSV
 # importing pandas module 
 import pandas as pd
 # importing numpy module
 import numpy as np
    
+# Transform dataset1.csv
 # reading csv file from url 
 data = pd.read_csv("https://raw.githubusercontent.com/hanselblack/dataeng_test/master/dataset1.csv")
   
@@ -55,6 +56,47 @@ data['above_100'] = np.where(data['price']> 100, True, False)
   
 # Dropping old Name columns
 data.drop(columns =["name"], inplace = True)
+
+# Dataframe
+df = pd.DataFrame(data)
+
+# Dataframe To CSV
+df.to_csv("Dataset1_Processed.csv")
+
+# df display
+data
+
+# Transform dataset2.csv
+# reading csv file from url 
+data = pd.read_csv("https://raw.githubusercontent.com/hanselblack/dataeng_test/master/dataset2.csv")
+  
+# dropping null value columns to avoid errors
+data.dropna(inplace = True)
+
+#Dropping rows with empty name
+data = data.dropna(subset=['name'])
+  
+# new data frame with split value columns
+new = data["name"].str.split(" ", n = 1, expand = True)
+  
+# making separate first name column from new data frame
+data["first_name"]= new[0]
+  
+# making separate last name column from new data frame
+data["last_name"]= new[1]
+
+# making separate last name column from new data frame
+data['price'] = data['price'].astype(float)
+data['above_100'] = np.where(data['price']> 100, True, False)
+  
+# Dropping old Name columns
+data.drop(columns =["name"], inplace = True)
+
+# Dataframe
+df = pd.DataFrame(data)
+
+# Dataframe To CSV
+df.to_csv("Dataset2_Processed.csv")
 
 # df display
 data
