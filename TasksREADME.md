@@ -12,3 +12,6 @@ Queries for the data is in the file Task2_SQLQuery.sql
 references i used to help me with my installation and understanding:
 https://dev.to/andre347/how-to-easily-create-a-postgres-database-in-docker-4moj
 https://docs.docker.com/samples/postgresql_service/
+
+#Task 3
+I have used the Modern Data Analytics Reference Architecture on AWS as the system architecture design as it includes a Data Lake to archive the processed images as well as Purpose-built Analytics tools for Business Intelligence.
