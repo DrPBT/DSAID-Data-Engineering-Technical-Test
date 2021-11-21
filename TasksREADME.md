@@ -16,6 +16,9 @@ https://docs.docker.com/samples/postgresql_service/
 # Task 3
 I have used the Modern Data Analytics Reference Architecture on AWS as the system architecture design as it includes a Data Lake to archive the processed images as well as Purpose-built Analytics tools for Business Intelligence.
 
+# Task 4
+I have used PowerBi for visualisation by getting data from the Web API.
+
 # Task 5
 It is again my 1st time working on machine learning outside of college.
 For this task, I used the sklearn module for the training and modelling of the dataset.
