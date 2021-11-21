@@ -15,3 +15,10 @@ https://docs.docker.com/samples/postgresql_service/
 
 # Task 3
 I have used the Modern Data Analytics Reference Architecture on AWS as the system architecture design as it includes a Data Lake to archive the processed images as well as Purpose-built Analytics tools for Business Intelligence.
+
+# Task 5
+It is again my 1st time working on machine learning outside of college.
+For this task, I used the sklearn module for the training and modelling of the dataset.
+Following the reference used to create the model, I have create the model but I am unsure of how to use the model to predict the buying price given a set of parameters.
+references used to help me with creating the data model:
+https://towardsdatascience.com/how-to-build-your-first-machine-learning-model-in-python-e70fd1907cdd
